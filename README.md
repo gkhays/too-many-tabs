@@ -2,6 +2,8 @@
 
 A lightweight Chrome extension that copies the URLs from all tabs in your current browser window to your clipboard.
 
+The extension badge shows how many exportable tabs are currently open in the focused window.
+
 ## What This Project Does
 
 When you click **Export URLs** in the extension popup, the extension:
@@ -27,6 +29,8 @@ No build step is required. This project is a static Manifest V3 extension and ca
 7. Click the extension icon, then click **Export URLs**.
 8. Paste anywhere to verify the copied output.
 
+The toolbar badge updates automatically as tabs are opened, closed, moved, or switched between windows.
+
 ## Usage
 
 1. Open the Chrome window whose tabs you want to export.
@@ -41,6 +45,8 @@ No build step is required. This project is a static Manifest V3 extension and ca
 
 If no exportable URLs are available, the popup shows an informational message.
 
+The extension badge is cleared when there are no exportable tabs in the focused window.
+
 ## Permissions
 
 The extension requests only the permissions needed for v1:
@@ -53,6 +59,7 @@ The extension requests only the permissions needed for v1:
 - `manifest.json`: Extension metadata, permissions, and popup registration
 - `popup.html`: Popup markup
 - `popup.css`: Popup styles
+- `background.js`: Badge updater for the current focused window
 - `popup.js`: Tab query + URL filtering + clipboard export logic
 - `DESIGN.md`: Requirements and acceptance criteria
 
