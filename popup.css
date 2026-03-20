@@ -99,9 +99,49 @@ h1 {
 
 .status-area.info {
   background-color: #e8f0fe;
-  color: #1f2937;
-  border-left: 3px solid #1f71b8;
+  color: #1a56db;
+  border-left: 3px solid #1a56db;
   padding-left: 11px;
+}
+
+.mode-selector {
+  display: flex;
+  gap: 16px;
+}
+
+.option-row input[type="radio"] {
+  width: 14px;
+  height: 14px;
+  accent-color: #1f71b8;
+}
+
+.hidden {
+  display: none;
+}
+
+.import-label {
+  display: block;
+  font-size: 13px;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.import-textarea {
+  width: 100%;
+  resize: vertical;
+  font-size: 12px;
+  font-family: monospace;
+  padding: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #202124;
+  line-height: 1.5;
+}
+
+.import-textarea:focus {
+  outline: 2px solid #1f71b8;
+  outline-offset: 1px;
 }
 
 .format-preview {

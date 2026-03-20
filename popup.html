@@ -9,15 +9,35 @@
 <body>
   <div class="container">
     <h1>Too Many Tabs</h1>
-    <label class="option-row" for="selectedOnly">
-      <input type="checkbox" id="selectedOnly" />
-      <span>Only selected tabs (Cmd/Ctrl+Click)</span>
-    </label>
-    <label class="option-row" for="addTitle">
-      <input type="checkbox" id="addTitle" />
-      <span>Add title</span>
-    </label>
-    <button id="exportBtn" class="primary-btn">Export URLs</button>
+
+    <div class="mode-selector" role="group" aria-label="Mode">
+      <label class="option-row">
+        <input type="radio" name="mode" id="modeExport" value="export" checked />
+        <span>Export</span>
+      </label>
+      <label class="option-row">
+        <input type="radio" name="mode" id="modeImport" value="import" />
+        <span>Import</span>
+      </label>
+    </div>
+
+    <div id="exportOptions">
+      <label class="option-row" for="selectedOnly">
+        <input type="checkbox" id="selectedOnly" />
+        <span>Only selected tabs (Cmd/Ctrl+Click)</span>
+      </label>
+      <label class="option-row" for="addTitle">
+        <input type="checkbox" id="addTitle" />
+        <span>Add title</span>
+      </label>
+    </div>
+
+    <div id="importOptions" class="hidden">
+      <label for="importInput" class="import-label">URLs to open (one per line, plain or Markdown):</label>
+      <textarea id="importInput" class="import-textarea" rows="6" placeholder="https://example.com&#10;[Example](https://example.com)"></textarea>
+    </div>
+
+    <button id="actionBtn" class="primary-btn">Export URLs</button>
     <div id="status" class="status-area" aria-live="polite" aria-atomic="true"></div>
     <div id="formatPreview" class="format-preview" aria-live="polite"></div>
   </div>
