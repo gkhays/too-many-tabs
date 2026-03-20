@@ -1,4 +1,4 @@
-# Chrome Extension Requirements Spec: Export Tab URLs
+# Chrome Extension Requirements Spec: Too Many Tabs
 
 ## 1. Overview
 

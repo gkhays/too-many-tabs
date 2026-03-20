@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Export Tab URLs",
+  "name": "Too Many Tabs",
   "version": "1.0",
   "description": "Export all tab URLs from the current window to clipboard",
   "permissions": [
@@ -9,7 +9,7 @@
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Export Tab URLs"
+    "default_title": "Too Many Tabs"
   },
   "host_permissions": []
 }

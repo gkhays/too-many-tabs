@@ -1,4 +1,4 @@
-# Export Tab URLs
+# Too Many Tabs
 
 A lightweight Chrome extension that copies the URLs from all tabs in your current browser window to your clipboard.
 
@@ -22,7 +22,7 @@ No build step is required. This project is a static Manifest V3 extension and ca
 2. Open Chrome and go to `chrome://extensions`.
 3. Turn on **Developer mode** (top-right).
 4. Click **Load unpacked**.
-5. Select this project folder (`tab-urls`).
+5. Select this project folder (`too-many-tabs`).
 6. Pin the extension from the Chrome extensions menu if desired.
 7. Click the extension icon, then click **Export URLs**.
 8. Paste anywhere to verify the copied output.
@@ -30,7 +30,7 @@ No build step is required. This project is a static Manifest V3 extension and ca
 ## Usage
 
 1. Open the Chrome window whose tabs you want to export.
-2. Click the **Export Tab URLs** extension icon.
+2. Click the **too-many-tabs** extension icon.
 3. Click **Export URLs** in the popup.
 4. Paste into any editor, chat, or document.
 
