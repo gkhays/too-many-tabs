@@ -8,12 +8,15 @@ document.addEventListener('DOMContentLoaded', () => {
 async function exportTabs() {
   const exportBtn = document.getElementById('exportBtn');
   const selectedOnlyCheckbox = document.getElementById('selectedOnly');
+  const addTitleCheckbox = document.getElementById('addTitle');
   const statusArea = document.getElementById('status');
+  const formatPreview = document.getElementById('formatPreview');
 
   // Disable button and clear previous status
   exportBtn.disabled = true;
   statusArea.textContent = '';
   statusArea.className = 'status-area';
+  formatPreview.textContent = '';
 
   try {
     // Query all tabs in the current window
@@ -36,31 +39,46 @@ async function exportTabs() {
       return;
     }
 
-    // Collect URLs in tab order
-    const urls = tabsToExport
-      .filter(tab => tab.url && isExportableUrl(tab.url))
-      .map(tab => tab.url);
+    // Collect exportable tabs in tab order
+    const exportableTabs = tabsToExport.filter(tab => tab.url && isExportableUrl(tab.url));
 
-    if (urls.length === 0) {
+    const outputLines = exportableTabs.map(tab => {
+      if (!addTitleCheckbox.checked) {
+        return tab.url;
+      }
+
+      const title = tab.title ? escapeMarkdownText(tab.title) : tab.url;
+      return `[${title}](${tab.url})`;
+    });
+
+    if (outputLines.length === 0) {
       showStatus('No exportable URLs found in the current window.', 'info');
       exportBtn.disabled = false;
       return;
     }
 
-    // Format output: one URL per line
-    const output = urls.join('\n');
+    // Format output: one item per line
+    const output = outputLines.join('\n');
 
     // Copy to clipboard
     await navigator.clipboard.writeText(output);
 
     // Show success message
-    showStatus(`✓ Copied ${urls.length} URL${urls.length !== 1 ? 's' : ''} to clipboard`, 'success');
+    showStatus(`✓ Copied ${outputLines.length} URL${outputLines.length !== 1 ? 's' : ''} to clipboard`, 'success');
+    formatPreview.textContent = addTitleCheckbox.checked
+      ? 'Format: Markdown [title](url)'
+      : 'Format: Plain URL per line';
     exportBtn.disabled = false;
   } catch (error) {
     console.error('Export failed:', error);
     showStatus(`Error: Failed to copy to clipboard. Please try again.`, 'error');
+    formatPreview.textContent = '';
     exportBtn.disabled = false;
   }
+}
+
+function escapeMarkdownText(text) {
+  return text.replace(/[\\[\]()`*_|]/g, '\\$&');
 }
 
 function isExportableUrl(url) {

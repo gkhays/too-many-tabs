@@ -13,8 +13,13 @@
       <input type="checkbox" id="selectedOnly" />
       <span>Only selected tabs (Cmd/Ctrl+Click)</span>
     </label>
+    <label class="option-row" for="addTitle">
+      <input type="checkbox" id="addTitle" />
+      <span>Add title</span>
+    </label>
     <button id="exportBtn" class="primary-btn">Export URLs</button>
     <div id="status" class="status-area" aria-live="polite" aria-atomic="true"></div>
+    <div id="formatPreview" class="format-preview" aria-live="polite"></div>
   </div>
   <script src="popup.js"></script>
 </body>
