@@ -103,3 +103,13 @@ h1 {
   border-left: 3px solid #1f71b8;
   padding-left: 11px;
 }
+
+.format-preview {
+  min-height: 14px;
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.format-preview:empty {
+  display: none;
+}
