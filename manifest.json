@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Export Tab URLs",
+  "version": "1.0",
+  "description": "Export all tab URLs from the current window to clipboard",
+  "permissions": [
+    "tabs",
+    "clipboardWrite"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Export Tab URLs"
+  },
+  "host_permissions": []
+}
