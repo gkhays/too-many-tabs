@@ -24,6 +24,22 @@ h1 {
   margin-bottom: 4px;
 }
 
+.option-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #374151;
+  cursor: pointer;
+  user-select: none;
+}
+
+.option-row input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  accent-color: #1f71b8;
+}
+
 .primary-btn {
   padding: 10px 16px;
   background-color: #1f71b8;
