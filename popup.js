@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function exportTabs() {
   const exportBtn = document.getElementById('exportBtn');
+  const selectedOnlyCheckbox = document.getElementById('selectedOnly');
   const statusArea = document.getElementById('status');
 
   // Disable button and clear previous status
@@ -24,8 +25,19 @@ async function exportTabs() {
       return;
     }
 
+    // Optionally narrow to tabs selected in the tab strip (Cmd/Ctrl+Click)
+    const tabsToExport = selectedOnlyCheckbox.checked
+      ? tabs.filter(tab => tab.highlighted)
+      : tabs;
+
+    if (tabsToExport.length === 0) {
+      showStatus('No selected tabs found in the current window.', 'info');
+      exportBtn.disabled = false;
+      return;
+    }
+
     // Collect URLs in tab order
-    const urls = tabs
+    const urls = tabsToExport
       .filter(tab => tab.url && isExportableUrl(tab.url))
       .map(tab => tab.url);
 

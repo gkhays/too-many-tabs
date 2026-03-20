@@ -9,6 +9,7 @@ A lightweight Chrome extension that copies the URLs from all tabs in your curren
 When you click **Export URLs** in the extension popup, the extension:
 
 - Reads tabs from the current Chrome window
+- Can limit export to only selected tabs (Cmd + Click / Ctrl + Click) when enabled
 - Keeps the same order as shown in the tab strip
 - Includes duplicate URLs if duplicate tabs exist
 - Skips non-exportable internal pages like `chrome://`, `chrome-extension://`, `edge://`, and `about:blank`
@@ -36,8 +37,9 @@ No build step is required. This project is a static Manifest V3 extension and ca
 
 ![too-many-tabs popup](docs/too-many.png)
 
-3. Click **Export URLs**.
-4. Paste into any editor, chat, or document.
+3. (Optional) Check **Only selected tabs (Cmd/Ctrl+Click)** to export just selected tabs.
+4. Click **Export URLs**.
+5. Paste into any editor, chat, or document.
 
 ![Exported URLs pasted into a document](docs/exported.png)
 
