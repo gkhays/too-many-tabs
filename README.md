@@ -1,5 +1,7 @@
 # Too Many Tabs
 
+[![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-yellow?logo=google-chrome)](https://chrome.google.com/webstore)
+
 A lightweight Chrome extension that copies the URLs from all tabs in your current browser window to your clipboard.
 
 ## What This Project Does
