@@ -30,9 +30,14 @@ No build step is required. This project is a static Manifest V3 extension and ca
 ## Usage
 
 1. Open the Chrome window whose tabs you want to export.
-2. Click the **too-many-tabs** extension icon.
-3. Click **Export URLs** in the popup.
+2. Click the **too-many-tabs** extension icon to open the popup.
+
+![too-many-tabs popup](docs/too-many.png)
+
+3. Click **Export URLs**.
 4. Paste into any editor, chat, or document.
+
+![Exported URLs pasted into a document](docs/exported.png)
 
 If no exportable URLs are available, the popup shows an informational message.
 
