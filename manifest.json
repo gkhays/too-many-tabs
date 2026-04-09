@@ -3,13 +3,23 @@
   "name": "Too Many Tabs",
   "version": "1.0",
   "description": "Export all tab URLs from the current window to clipboard",
+  "icons": {
+    "16": "favicon-16x16.png",
+    "32": "favicon-32x32.png",
+    "48": "favicon.ico",
+    "128": "favicon.ico"
+  },
   "permissions": [
     "tabs",
     "clipboardWrite"
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Too Many Tabs"
+    "default_title": "Too Many Tabs",
+    "default_icon": {
+      "16": "favicon-16x16.png",
+      "32": "favicon-32x32.png"
+    }
   },
   "host_permissions": []
 }
